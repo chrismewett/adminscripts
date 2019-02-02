@@ -47,7 +47,7 @@ Import-Module ActiveDirectory
  
 function GenerateReport {
 	$cwd = (get-location).Path
-	New-PSDrive -name "AD" -root "" -PSProvider ActiveDirectory -server (get-addomain).PDCEmulator
+	New-PSDrive -name "AD" -root "" -PSProvider ActiveDirectory -server (get-addomain).PDCEmulator | out-null
 
 	$output = New-Object System.Collections.ArrayList
 	write-verbose "[+] retrieving default passsword policy"
