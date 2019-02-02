@@ -69,10 +69,10 @@ function GenerateReport {
             	"Precedence" = "-1";
             	"ReversibleEncryptionEnabled" = $defaultpolicy.ReversibleEncryptionEnabled;
             	"whenChanged" = "undefined";
-            	"whenCreated" = "undefined";
-            	"objectClass" = "undefined";
-            	"saclcount" = "undefined";
-            	"denycount" = "undefined";
+            	"whenCreated" = (get-adobject (get-addomain).distinguishedname -property whencreated).whencreated;
+            	"objectClass" = "domainDNS";
+            	"saclcount" = -1;
+            	"denycount" = 0;
             	"error" = "";
 	}))
 
