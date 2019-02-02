@@ -15,8 +15,6 @@ Provide status information as the script runs
 .PARAMETER OutputLocation
 Default: The directory the script is called from.
  
- 
- 
 .INPUTS None
 No input is accepted
  
@@ -27,19 +25,9 @@ A Comma Separated Value (CSV) file named [foo]-[string of numbers].csv in the Ou
 audit-adpasswordpolicies.ps1 -outputlocation d:\ 
 Ouputs CSV to the root of d:\
  
- 
- 
- 
 .LINK  
 https://chrismewett.net/
- 
- 
- 
 #>
- 
- 
- 
- 
  
 [CmdletBinding()]
 Param(
@@ -62,13 +50,6 @@ Import-Module ActiveDirectory
  
  
 function GenerateReport {
-Param (
-[Parameter(Mandatory=$true,Position=1)]
-[string]$outputlocation,
-[Parameter(Mandatory=$true,Position=2)]
-[string]$domain
- 
-)  
 	$cwd = (get-location).Path
 	New-PSDrive -name "AD" -root "" -PSProvider ActiveDirectory -server (get-addomain).PDCEmulator
 
@@ -158,4 +139,4 @@ function Main {
 	}
 }
 
-
+Main
