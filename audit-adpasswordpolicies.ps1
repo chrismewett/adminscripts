@@ -31,15 +31,11 @@ https://chrismewett.net/
  
 [CmdletBinding()]
 Param(
-[Parameter(Mandatory=$false,Position=1,ParameterSetName="run")]
+[Parameter(Mandatory=$false,Position=1)]
 [validatescript({ test-path $_ })]
 [string]$outputlocation = (get-location).path,
-[Parameter(Mandatory=$false,Position=1,ParameterSetName="run")]
-[string]$query = 'default',
-[Parameter(Mandatory=$false,Position=1,ParameterSetName="run")]
-[string]$grouplist,
-Parameter(Mandatory=$false,Position=1,ParameterSetName="run")]
-[string]$outputfile = ('passwordpolices-' + ( get-date -uformat +-%s ) + '.csv'),
+[Parameter(Mandatory=$false,Position=2)]
+[string]$outputfile = ('passwordpolices' + ( get-date -uformat +-%s ) + '.csv'),
 [switch]$lint
 
 )
@@ -135,7 +131,7 @@ function Main {
 		write-host "[!] Not Implemented Yet. Sorry"
 		
 	} else {
-		GenerateReport | Export-Csv -NoTypeInformation -Path $outputlocation 
+		GenerateReport | Export-Csv -NoTypeInformation -Path $outputfile
 	}
 }
 
