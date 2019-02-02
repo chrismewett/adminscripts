@@ -98,7 +98,7 @@ function GenerateReport {
         		"dn" = $policy;
         		"type" = "finegrained";
         		"name" = $config.Name;
-        		"AppliesTo" = $config.AppliesTo; 
+        		"AppliesTo" = ($config.AppliesTo.Value -join '|'); 
            		"ComplexityEnabled" = $config.ComplexityEnabled;
             		"LockoutDuration" = $config.LockoutDuration;
             		"LockoutObservationWindow" = $config.LockoutObservationWindow;
@@ -114,7 +114,7 @@ function GenerateReport {
             		"objectClass" = $obj.ObjectClass;
             		"saclcount" = $auditcount;
             		"denycount" = $denycount;
-            		"error" = $config.error
+            		"error" = ($config.error.Value -join '|')
 
     		}))
 	}
