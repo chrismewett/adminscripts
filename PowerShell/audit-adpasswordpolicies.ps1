@@ -26,7 +26,7 @@ audit-adpasswordpolicies.ps1 -outputlocation d:\
 Ouputs CSV to the root of d:\
  
 .LINK  
-https://chrismewett.net/
+https://utopia.consulting/
 #>
  
 [CmdletBinding()]
