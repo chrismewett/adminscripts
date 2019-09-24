@@ -1,4 +1,3 @@
-# adminscripts
-Auditing and Administrative Scripts.
-
+# AuditScripts
+Simple, reusable scripts used to audit environments.
 
